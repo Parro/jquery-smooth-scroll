@@ -1,5 +1,5 @@
 /*!
- * jQuery Smooth Scroll - v1.5.5 - 2015-09-01
+ * jQuery Smooth Scroll - v1.5.6 - 2015-09-01
  * https://github.com/kswedberg/jquery-smooth-scroll
  * Copyright (c) 2015 Karl Swedberg
  * Licensed MIT (https://github.com/kswedberg/jquery-smooth-scroll/blob/master/LICENSE-MIT)
@@ -18,7 +18,7 @@
   }
 }(function ($) {
 
-  var version = '1.5.5',
+  var version = '1.5.6',
       optionOverrides = {},
       defaults = {
         exclude: [],
@@ -227,7 +227,7 @@
         direction = 'up';
     }
 
-    if (direction == 'up' && opts.offsetUp != 0) {
+    if (direction === 'up' && opts.offsetUp !== 0) {
         aniProps[scrollDir] += opts.offsetUp;
     }
 
