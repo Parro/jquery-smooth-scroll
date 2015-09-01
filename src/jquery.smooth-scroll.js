@@ -1,5 +1,5 @@
 (function($) {
-  var version = '1.5.5',
+  var version = '1.5.6',
       optionOverrides = {},
       defaults = {
         exclude: [],
@@ -208,7 +208,7 @@
         direction = 'up';
     }
 
-    if (direction == 'up' && opts.offsetUp != 0) {
+    if (direction === 'up' && opts.offsetUp !== 0) {
         aniProps[scrollDir] += opts.offsetUp;
     }
 
