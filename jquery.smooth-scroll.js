@@ -1,8 +1,8 @@
 /*!
  * jQuery Smooth Scroll - v1.5.6 - 2015-09-01
- * https://github.com/kswedberg/jquery-smooth-scroll
+ * https://github.com/Parro/jquery-smooth-scroll
  * Copyright (c) 2015 Karl Swedberg
- * Licensed MIT (https://github.com/kswedberg/jquery-smooth-scroll/blob/master/LICENSE-MIT)
+ * Licensed MIT (https://github.com/Parro/jquery-smooth-scroll/blob/master/LICENSE-MIT)
  */
 
 (function (factory) {
