@@ -5,8 +5,9 @@
         exclude: [],
         excludeWithin:[],
         offset: 0,
+        offsetUp: 0,
 
-        // one of 'top' or 'left'
+          // one of 'top' or 'left'
         direction: 'top',
 
         // jQuery set of elements you wish to scroll (for $.smoothScroll).
@@ -198,6 +199,19 @@
                           0;
 
     aniProps[scrollDir] = scrollTargetOffset + scrollerOffset + opts.offset;
+
+    var direction = 'down';
+
+    if ($scroller.scrollTop() < aniProps[scrollDir]) {
+        direction = 'down';
+    } else {
+        direction = 'up';
+    }
+
+    if (direction == 'up' && opts.offsetUp != 0) {
+        aniProps[scrollDir] += opts.offsetUp;
+    }
+
     speed = opts.speed;
 
     // automatically calculate the speed of the scroll based on distance / coefficient
