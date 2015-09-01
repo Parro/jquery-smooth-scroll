@@ -1,5 +1,5 @@
 /*!
- * jQuery Smooth Scroll - v1.5.5 - 2015-02-19
+ * jQuery Smooth Scroll - v1.5.5 - 2015-09-01
  * https://github.com/kswedberg/jquery-smooth-scroll
  * Copyright (c) 2015 Karl Swedberg
  * Licensed MIT (https://github.com/kswedberg/jquery-smooth-scroll/blob/master/LICENSE-MIT)
@@ -24,8 +24,9 @@
         exclude: [],
         excludeWithin:[],
         offset: 0,
+        offsetUp: 0,
 
-        // one of 'top' or 'left'
+          // one of 'top' or 'left'
         direction: 'top',
 
         // jQuery set of elements you wish to scroll (for $.smoothScroll).
@@ -217,6 +218,19 @@
                           0;
 
     aniProps[scrollDir] = scrollTargetOffset + scrollerOffset + opts.offset;
+
+    var direction = 'down';
+
+    if ($scroller.scrollTop() < aniProps[scrollDir]) {
+        direction = 'down';
+    } else {
+        direction = 'up';
+    }
+
+    if (direction == 'up' && opts.offsetUp != 0) {
+        aniProps[scrollDir] += opts.offsetUp;
+    }
+
     speed = opts.speed;
 
     // automatically calculate the speed of the scroll based on distance / coefficient
